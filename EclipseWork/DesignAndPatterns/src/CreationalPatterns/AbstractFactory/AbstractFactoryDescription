@@ -1,0 +1,8 @@
+Type : Creational
+Purpose: Provide an interface for creating families of related 
+		or dependent objects without specifying their concrete classes
+		
+One hierarchal abstract class instantiates the appropriate classes. 
+Great for automation and protection from client's wanting to touch java classes
+Disadvantage: If additional concrete or attributes need to be added, must implement Factory for that particular attribute or feature;
+	e.g. if lights were esse added... new Lights hierarchy: CarLight and VanLight
