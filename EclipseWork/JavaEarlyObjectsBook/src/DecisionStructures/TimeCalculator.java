@@ -3,74 +3,88 @@ package DecisionStructures;
 import java.util.Scanner;
 
 public class TimeCalculator {
-	double seconds;
-	double minutes; // 60 seconds in hour minute
-	double hours; // 3600 seconds in one hour
-	double day;// 86,400 seconds in one day
+	int second;
+	int minute; // 60 seconds in hour minute
+	int hour; // 3600 seconds in one hour
+	int day;// 86,400 seconds in one day
 
-	public TimeCalculator(double seconds) {
-		setSeconds(seconds);
+	public TimeCalculator(int userSec) {
+		setSecond(userSec);
 		calculateTime();
 	} // endae CONSTRUCTOR
-	public void setSeconds(double seconds) {
-		this.seconds = seconds;
+	public void setSecond(int userSec) {
+		this.second = userSec;
 	}
 
-	public double getSeconds() {
-		return seconds;
+	public int getSecond() {
+		return (int)second;
 	}
 
-	public void setMinutes(double minutes) {
-		this.minutes = minutes;
+	public void setMinute(int minute) {
+		this.minute = minute;
 	}
-	public double getMinutes() {
-		return minutes;
+	public int getMinute() {
+		return (int) minute;
 	}
 
-	public void setHours(double hours) {
-		this.hours = hours;
+	public void setHour(int hour) {
+		this.hour = hour;
 	}
-	public double getHours() {
-		return hours;
+	public int getHour() {
+		return (int)hour;
 	}
-	public void setDays(double day) {
+	public void setDay(int day) {
 		this.day = day;
 	}
-	public double getDays() {
-		return day;
+	public int getDay() {
+		return (int)day;
 	}
 
-	private void calculateTime() {
-		if (seconds <= 60 && seconds >= 0) {
-			setSeconds(seconds);
-			setMinutes(0);
-			setHours(0);
-			setDays(0);
+	private void  calculateTime() {
+		if (second <60 && second >=0) {
+			setSecond((int)second);
 		}
-		else {
-			day = seconds / 86400;
-			setDays(day);
-			hours = (seconds / 3600);
-			setHours(hours);
-			minutes = (seconds / 60);
-			setMinutes(minutes);
-			seconds = (minutes % .1) * 60;
+		else if (second >= 60 && second < 3600) {
+			minute = second/60;
+			second = second%60;
+			setSecond((int)second);
+			setMinute((int)minute);
 		}
+		else if (second >=3600 && second < 86400) {
+			hour = second/3600;
+			minute = (hour % 1) * 60;
+			second = second%60;
+			setHour((int)hour);
+			setMinute((int) minute);
+			setSecond((int)second);
+		}
+		else if (second >=86400) {
+			day = second / 86400;
+			hour = (day % 1) * 24;
+			minute = (hour % 1) * 60;
+			second = (minute % 1)*60;
+			setDay((int)day);
+			setHour((int)hour);
+			setMinute((int) minute);
+			setSecond((int)second);
+		} // 
 	}
 
 	public String toString() {
-		String result = "Seconds: " + getSeconds() + "\nMinutes: "
-				+ getMinutes() + "\nHours: " + getHours() + "\nDays: "
-				+ getDays();
+		String result = "Seconds: " + getSecond() + "\nMinutes: "
+				+ getMinute() + "\nHours: " + getHour() + "\nDays: "
+				+ getDay();
 		return result;
 	}
 
 	public static void main(String args[]) {
 		Scanner z = new Scanner(System.in);
 		System.out.println("Enter number of Seconds: ");
-		double userSec = z.nextInt();
+		int userSec = z.nextInt();
 		TimeCalculator tc = new TimeCalculator(userSec);
 		System.out.println(tc.toString());
+		
+		
 		z.close();
 	}
 
