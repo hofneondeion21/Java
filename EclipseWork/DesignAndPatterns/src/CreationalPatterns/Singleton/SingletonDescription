@@ -1,0 +1,14 @@
+Type : Creational 
+Puropse: Ensure a class allows only one object to be created, 
+	providing a single point of access to it
+Methods: 
+	'Traditional' 
+		--> make the constructor private
+		--> provide public static getter returning a static instance of the Singleton
+		--> using Syncrhonized and instance variable
+	Enumeration
+		--> Have one constant named "INSTANCE" -> representing the Singleton
+		--> using Synchronized and instance variable
+		--> !need to provide the public static getter returning the static instance of the Singleton
+			--> NO CONSTRUCTOR NEEDED
+		
