@@ -1,0 +1,9 @@
+Design and Pattern that help manage how classes are organised and interrelated
+7 Structural Patterns
+	- Adapter
+	- Bridge
+	- Composite
+	- Decorator
+	- Facade
+	- Flyweight
+	- Proxy
