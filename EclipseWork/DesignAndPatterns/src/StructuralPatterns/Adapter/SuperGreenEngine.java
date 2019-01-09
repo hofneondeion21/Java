@@ -16,5 +16,5 @@ package StructuralPatterns.Adapter;
 	// can now be a part fo the hiearchry of the other already created classes
 
 public class SuperGreenEngine {
-
+	
 }
