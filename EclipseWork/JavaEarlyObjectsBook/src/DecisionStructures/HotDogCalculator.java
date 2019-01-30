@@ -6,7 +6,7 @@ import java.util.Random;
 
 import javax.swing.JFrame;
 
-public class HotDogCalculator {
+public class HotDogCalculator < GUIPART>  {
 
 	// Hot dog packs come in 10s
 	 // and Hot dog buns comes in 8s
@@ -168,10 +168,12 @@ public class HotDogCalculator {
 	
 	private class GUIPART extends JFrame {
 		private int x = 480, y = 340;
+		
 		public GUIPART() {
 			super("Total Price");
 			setPreferredSize(new Dimension(x,y));
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			
 		}
 		
 		
@@ -184,6 +186,7 @@ public class HotDogCalculator {
 		int numberOfPeople = r.nextInt(99999);
 		int numberOfHotDogsPerPerson = r.nextInt(4)+1;
 		HotDogCalculator.getInstance().init(numberOfPeople, (numberOfPeople*numberOfHotDogsPerPerson));
+		
 		
 
 	}
