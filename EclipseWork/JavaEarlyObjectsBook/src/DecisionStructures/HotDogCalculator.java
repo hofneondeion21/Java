@@ -1,14 +1,11 @@
 package DecisionStructures;
 
+import java.awt.Color;
 import java.awt.Dimension;
-import java.text.NumberFormat;
 import java.util.Random;
 
 import javax.swing.JFrame;
-
-public class HotDogCalculator < GUIPART>  {
-
-	// Hot dog packs come in 10s
+//Hot dog packs come in 10s
 	 // and Hot dog buns comes in 8s
 		// Calculate number of packages of hot dogs and the number of packages of hot dog buns needed for a cookout
 			// while minimizzing the amoutn of lefotovers
@@ -19,9 +16,11 @@ public class HotDogCalculator < GUIPART>  {
 		// Min # of packagees of buns required
 		// number of hot dogs that will remain for leftovers
 		// number of buns that will remain for leftovers
+
+public class HotDogCalculator {
 	
 	private static HotDogCalculator hdc = null;
-	
+	// singleton design
 	public static HotDogCalculator getInstance() {
 		if (hdc == null) {
 			hdc = new HotDogCalculator();
@@ -29,10 +28,9 @@ public class HotDogCalculator < GUIPART>  {
 		return hdc;
 	} // endae getInstance
 	
-	
-//	private int mod = getNumberOfHotDogsNeeded()%10;
-	
-	
+	// DATA FIELDS or Instance Variables
+		// Are private 
+		// Global 
 	private int hotDogsPerPack = 10; // should be a whole integer
 	private int packsOfHotDog = 0; // should be a whole integer --> 10 in a pack
 	private int leftOverHotDog = 0; // should be a whole integer; --> should be less than 10
@@ -45,6 +43,13 @@ public class HotDogCalculator < GUIPART>  {
 	private int numberOfPeople;
 	private int numberOfHotDogsNeeded;
 	
+	// method to intialize user's inputs
+		public void init(int numberOfPeople, int numberOfHotDogsNeeded) {
+			this.numberOfPeople = numberOfPeople;
+			this.numberOfHotDogsNeeded = numberOfHotDogsNeeded;
+			mainRun(); // calls mainRun method
+		} // endae mutator init method
+	
 	
 	
 //	private int getMod() {
@@ -52,17 +57,16 @@ public class HotDogCalculator < GUIPART>  {
 //	} // endae
 	
 	private void mainRun() {
-		
-		
-		
 		calcNumberOfHotDogPacksNeeded(getNumberOfHotDogsNeeded());
 		calcNumberOfBunPacksNeeded(getNumberOfHotDogsNeeded());
 		
 		calcLeftOverHotDog();
 		calcLeftOverBun();
 		
-		
 		prints();
+		
+		GUIPART gp = new GUIPART();
+		gp.setBackground(Color.RED);
 	} // endae mainRun()
 	
 	private void prints() {
@@ -78,12 +82,7 @@ public class HotDogCalculator < GUIPART>  {
 		
 	}
 	
-	// method to intialize user's inputs
-	public void init(int numberOfPeople, int numberOfHotDogsNeeded) {
-		this.numberOfPeople = numberOfPeople;
-		this.numberOfHotDogsNeeded = numberOfHotDogsNeeded;
-		mainRun(); // calls mainRun method
-	} // endae mutator init method
+	
 	
 	private int getNumberOfHotDogsNeeded() {
 		return numberOfHotDogsNeeded;
@@ -118,7 +117,6 @@ public class HotDogCalculator < GUIPART>  {
 	private int getLeftOverBun() {
 		return leftOverBun;
 	}
-	NumberFormat nf;
 	
 	// method to calcualte the number of hotdog packs needed
 	private void calcNumberOfHotDogPacksNeeded(int numberOfHotDogsNeeded) {
@@ -166,7 +164,12 @@ public class HotDogCalculator < GUIPART>  {
 	
 	
 	
+	
+/////////// PRIVATE CLASSS /////////////////////
+	@SuppressWarnings("unused")
 	private class GUIPART extends JFrame {
+
+		private static final long serialVersionUID = 1L;
 		private int x = 480, y = 340;
 		
 		public GUIPART() {
@@ -174,11 +177,10 @@ public class HotDogCalculator < GUIPART>  {
 			setPreferredSize(new Dimension(x,y));
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			
-		}
-		
-		
-	}
+		} // endae CONSTRUCTOR
+	} // endae PRIVATE CLASS GUIPART
 	
+//////////////END OF PRIVATE GUIPART CLASS //////////////////////
 	
 	
 	public static void main(String[] args) {
@@ -186,9 +188,16 @@ public class HotDogCalculator < GUIPART>  {
 		int numberOfPeople = r.nextInt(99999);
 		int numberOfHotDogsPerPerson = r.nextInt(4)+1;
 		HotDogCalculator.getInstance().init(numberOfPeople, (numberOfPeople*numberOfHotDogsPerPerson));
-		
-		
+		// ClassName.methodName().methodName(param1, param2);
+	} // endae MAIN
+	
+} // endae CLASS
 
-	}
 
-}
+
+
+
+
+
+
+
