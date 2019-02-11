@@ -33,14 +33,12 @@ public class WidgetFactory {
 							// shifts
 		double daysToMakeWidgets = (double) widgets / (double) wPd;
 		System.out.println(daysToMakeWidgets + " days");
-
 		hours = ((daysToMakeWidgets % .1)) * 16;
 		System.out.println(hours + " hours");
 		minutes = (hours % .1) * 60;
 		System.out.println(minutes + " mins");
 		seconds = (minutes % .1) * 60;
 		System.out.println(seconds + " secs");
-
 		// System.out.println(sec);
 
 		return daysToMakeWidgets;

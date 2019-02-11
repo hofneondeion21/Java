@@ -1,14 +1,17 @@
 package DecisionStructures;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class a extends JFrame {
-//	Instance variables
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	//	Instance variables
 	// Declaring instance variables
 	// By convention, should be private
 	private JLabel jlbName;
