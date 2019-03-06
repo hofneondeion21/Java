@@ -27,6 +27,8 @@ public class Sample {
 	} // endae main method
 	
 	
+	
+	
 	public static void comparing(int num1, int num2, int num3) {
 		if (num1 < num2 && num2 < num3) {
 			System.out.println("IN ORDER!"); 
