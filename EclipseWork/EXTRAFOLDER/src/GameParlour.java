@@ -1,8 +1,8 @@
     import java.util.ArrayList;
-    import java.util.Collections;
+import java.util.Collections;
 import java.util.Comparator;
     //8no. creating arraylist 
-    public class GameParlour implements Comparator<VideoGameStation>{
+    public class GameParlour {
        static ArrayList<VideoGameStation> arr=new ArrayList<>();
     
 //9no. adding new attributes to the list of videogamestation
@@ -82,14 +82,6 @@ public void bookingGameStation(int index_no, String CustomerName, String Custome
     	return arr;
     } // endae Accessor getArray()
 	
-	@Override
-	public int compare(VideoGameStation o1, VideoGameStation o2) {
-		return o1.compareTo(o2);
-		}
-	
-	public int compareByHours(VideoGameStation o, VideoGameStation o1) {
-		return o.getTimeDuration().compareTo(o1.getTimeDuration());
-	}
 	
 	
     }
