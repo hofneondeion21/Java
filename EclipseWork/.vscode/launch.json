@@ -1,5 +1,12 @@
 {
     "configurations": [
+    {
+        "type": "java",
+        "name": "Debug (Launch) - External Terminal",
+        "request": "launch",
+        "console": "externalTerminal",
+        "mainClass": ""
+    },
         {
             "type": "java",
             "name": "CodeLens (Launch) - Binary",
@@ -11,7 +18,7 @@
             "type": "java",
             "name": "CodeLens (Launch) - Exam3",
             "request": "launch",
-            "mainClass": "Exam3",
+            "mainClass": "StringToChar",
             "projectName": "ExtraPractice"
         }
     ]
