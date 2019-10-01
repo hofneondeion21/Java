@@ -72,9 +72,9 @@ public void bookingGameStation(int index_no, String CustomerName, String Custome
         }        
     }
     //15 no .
-    public void ascendingcollect(){
-           Collections.sort(arr, this);
-       } // endae ascending Sort
+//    public void ascendingcollect(){
+//           Collections.sort(arr, this);
+//       } // endae ascending Sort
     
     
     // NEW METHOD TO JUST RETURN ARRAY
