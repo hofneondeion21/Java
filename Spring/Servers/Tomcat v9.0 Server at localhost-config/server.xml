@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="jspDemoHelloWorld" path="/jspDemoHelloWorld" reloadable="true" source="org.eclipse.jst.jee.server:jspDemoHelloWorld"/></Host>
+      <Context docBase="jspDemoHelloWorld" path="/jspDemoHelloWorld" reloadable="true" source="org.eclipse.jst.jee.server:jspDemoHelloWorld"/><Context docBase="DemoApp" path="/DemoApp" reloadable="true" source="org.eclipse.jst.jee.server:DemoApp"/><Context docBase="Servlets_And_Web" path="/Servlets_And_Web" reloadable="true" source="org.eclipse.jst.jee.server:Servlets_And_Web"/><Context docBase="CreateServlet" path="/CreateServlet" reloadable="true" source="org.eclipse.jst.jee.server:CreateServlet"/><Context docBase="GetPostMethods" path="/GetPostMethods" reloadable="true" source="org.eclipse.jst.jee.server:GetPostMethods"/><Context docBase="ServletWithinAServlet" path="/ServletWithinAServlet" reloadable="true" source="org.eclipse.jst.jee.server:ServletWithinAServlet"/><Context docBase="URLReWriting" path="/URLReWriting" reloadable="true" source="org.eclipse.jst.jee.server:URLReWriting"/></Host>
     </Engine>
   </Service>
 </Server>
