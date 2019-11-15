@@ -1,0 +1,16 @@
+SAME AS ANNOTATIONS PROJECT
+
+ADDING JSP 
+
+JSP = Java Server Pages
+
+USING JSP TO SEND HTML TAGS AND CUSTOMIZING THE OUTPUT
+
+
+using JSP allows user to perform without using Serlvets
+
+must change the form action to name.jsp
+
+Using JSP will reduce the work for Servlets (which will have to get request, response, etc)
+
+Can work with both, will work with both later on

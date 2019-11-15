@@ -3,7 +3,7 @@ public class CCipher {
 	
 	public CCipher() {
 		setN(7);
-		setS("STEPHANY");
+		setS("ZALWOHUF");
 		System.out.println(enCrypt(getS(), getN()));
 		System.out.println(deCrypt(getS()));
 		

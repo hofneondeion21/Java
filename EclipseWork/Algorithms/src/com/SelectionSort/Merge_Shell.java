@@ -11,11 +11,11 @@ public class Merge_Shell {
 		new Merge_Shell();
 	}
 	
-	Merge_Shell() {
+	private Merge_Shell() {
 		initRun();
 	}
 	
-	Merge_Shell(boolean flag, int size) {
+	private Merge_Shell(boolean flag, int size) {
 		arr = initArr(arr, size);
 		if(flag == true) {
 			MargeSort(arr, 0, (arr.length-1));
@@ -68,7 +68,7 @@ public class Merge_Shell {
 	} // endae initArr method
 	
 	  /* function to sort arr using shellSort */
-    int ShellSort(int arr[]) { 
+    int ShellSort(int arr[]){ 
         int n = arr.length; 
         // Start with a big gap, then reduce the gap
         long start = System.nanoTime();

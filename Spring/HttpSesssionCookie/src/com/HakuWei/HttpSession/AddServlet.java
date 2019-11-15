@@ -2,6 +2,7 @@ package com.HakuWei.HttpSession;
 
 import java.io.IOException;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,8 +22,19 @@ public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOExce
 		
 		
 		int k = (int)Math.pow(j+i, 2);
+		// can use sessions to send request/response
+//		HttpSession session = req.getSession();
 		
+//		session.setAttribute("k", k);
+		
+//		can use Cookies as well!
+		Cookie cookies = new Cookie("k", k+"");
+		res.addCookie(cookies); // add cookie to response
+		
+		// using line below, will send cookie along with response 
 		res.sendRedirect("sq?="+k);
+		
+		
 		
 		
 	}

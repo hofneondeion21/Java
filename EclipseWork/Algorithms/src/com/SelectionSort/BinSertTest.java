@@ -43,7 +43,7 @@ public class BinSertTest {
 	}
 	
 	int binSearch(int a[], int low, int high, int key) {
-		if (high ==low) {
+		if (high==low) {
 //			System.out.printf("\t\tHIGH==LOW: %2d==%2d\n", high, low);
 			return (key > a[low]) ? (low+1) : low;
 		}
