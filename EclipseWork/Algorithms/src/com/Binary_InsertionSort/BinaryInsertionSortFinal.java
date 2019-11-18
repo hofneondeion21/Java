@@ -1,4 +1,4 @@
-package com.SelectionSort;
+package com.Binary_InsertionSort;
 
 import java.util.Arrays;
 import java.util.Random;

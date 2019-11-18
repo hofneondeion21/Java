@@ -1,4 +1,4 @@
-package com.SelectionSort;
+package com.BinarySearch;
 import java.util.Random;
 	
 public class BinSearchCS423 {

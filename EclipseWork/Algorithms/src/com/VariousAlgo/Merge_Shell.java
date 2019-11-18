@@ -1,4 +1,4 @@
-package com.SelectionSort;
+package com.VariousAlgo;
 
 import java.util.Random;
 

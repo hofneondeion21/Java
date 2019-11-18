@@ -1,23 +1,23 @@
-package com.SelectionSort;
+package com.VariousAlgo;
 
 
 import java.math.BigDecimal;
 import java.util.Random;
 
-public class Test02 {
+public class Binary_Insertion {
 	private int[] arr;
 	private BigDecimal time;
 	private BigDecimal timeI;
 
 	public static void main(String args[])  {
-		new Test02();
+		new Binary_Insertion();
 	} // endae MAIN
 
-	Test02()  {
+	Binary_Insertion()  {
 		initRun();
 	} // endae Constructor
 	
-	Test02(boolean flag, int size)  {
+	Binary_Insertion(boolean flag, int size)  {
 		arr = initArr(arr, size, 100);
 		if (flag == true) {
 			BinSertSort(arr);
@@ -34,7 +34,7 @@ public class Test02 {
 			// loop becomes exponent number for base 10 powers
 			for (int j = 0; j <nn; j++) { 
 			// inner loop will run each test 10 times and sum the times
-				Test02 t1 = new Test02(true, (int)Math.pow(10, i));
+				Binary_Insertion t1 = new Binary_Insertion(true, (int)Math.pow(10, i));
 				sum = sum.add(t1.getTime()); 
 				// adding the times (ns) for each run from j to nn
 			}
@@ -42,7 +42,7 @@ public class Test02 {
 			System.out.printf("Input(N) : 10^%d Avg  : %1.4e\n",i, avg);
 			
 			for (int j = 0; j <nn; j++) { 
-				Test02 t2 = new Test02(false, (int)Math.pow(10, i));
+				Binary_Insertion t2 = new Binary_Insertion(false, (int)Math.pow(10, i));
 				sumI = sumI.add(t2.getTimeI());
 			}
 			avgI = sumI.divide(zz); // computes average

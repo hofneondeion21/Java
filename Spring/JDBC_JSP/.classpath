@@ -14,5 +14,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="/Users/venividivicihofneondeion010101/Documents/GitHub/SQL/Setup/sqlite-jdbc-3.28.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
