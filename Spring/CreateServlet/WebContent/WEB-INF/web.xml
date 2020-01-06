@@ -14,7 +14,8 @@
   <servlet>
   	<servlet-name> abc</servlet-name>
   	<servlet-class>
-  		com.HakuWei.AddServlet  <!--  Fully qualified name with package! -->
+  		com.HakuWei.AddServlet  
+  		<!--  Fully qualified name with package! -->
   	</servlet-class>
   </servlet>
   <!-- servlet name must match!   -->
