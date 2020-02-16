@@ -1,4 +1,4 @@
-package com.Player.Positions.FullBacks;
+package com.Player.Positions.Offence.FullBacks;
 
 import com.Player.Player.Player;
 

@@ -1,4 +1,4 @@
-package com.Player.Positions.OffensiveLines;
+package com.Player.Positions.Offence.OffensiveLines;
 
 import com.Player.Player.Player;
 

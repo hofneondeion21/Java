@@ -10,7 +10,7 @@ public class Roster {
 	}
 	
 	private RosterManager getRosterManagerInstance() {
-		return (rm == null) ? new RosterManager(): rm;
+		return (rm == null) ? RosterManager.getInstance(): rm;
 	}
 	
 	public void displayRoster() {

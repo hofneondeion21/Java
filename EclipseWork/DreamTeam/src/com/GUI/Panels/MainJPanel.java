@@ -21,7 +21,7 @@ public class MainJPanel extends JPanel {
 	private JTable jtable;
 	private RosterManager rm;
 	public MainJPanel() {
-		rm = new RosterManager();
+		rm = RosterManager.getInstance();
 		initBackgrd();
 		initBord();
 		initLayout();

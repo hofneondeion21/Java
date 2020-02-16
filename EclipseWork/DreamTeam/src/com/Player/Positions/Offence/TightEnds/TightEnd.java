@@ -1,4 +1,4 @@
-package com.Player.Positions.TightEnds;
+package com.Player.Positions.Offence.TightEnds;
 
 import com.Player.Player.Player;
 

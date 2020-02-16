@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 import com.Player.Player.Player;
 import com.Player.PlayerController.PlayerController;
-import com.Player.Positions.FullBacks.FullBack;
-import com.Player.Positions.OffensiveLines.OffensiveLine;
-import com.Player.Positions.QuarterBacks.Quarterback;
-import com.Player.Positions.RunningBacks.RunningBack;
-import com.Player.Positions.TightEnds.TightEnd;
-import com.Player.Positions.WideReceivers.WideReceiver;
+import com.Player.Positions.Offence.FullBacks.FullBack;
+import com.Player.Positions.Offence.OffensiveLines.OffensiveLine;
+import com.Player.Positions.Offence.QuarterBacks.Quarterback;
+import com.Player.Positions.Offence.RunningBacks.RunningBack;
+import com.Player.Positions.Offence.TightEnds.TightEnd;
+import com.Player.Positions.Offence.WideReceivers.WideReceiver;
 
 public class RosterManager {
 	private PlayerController pc;
@@ -41,6 +41,7 @@ public class RosterManager {
 	}
 	
 	private void initColHeader(ArrayList<String> colHeader) {
+		colHeader = new ArrayList<String>();
 		colHeader.add("First");
 		colHeader.add("Last");
 		colHeader.add("Team");
@@ -52,7 +53,6 @@ public class RosterManager {
 	
 	private void addAllOffence(PlayerController pc) {
 		addQBs(pc);
-		addRBs(pc);
 		addRBs(pc);
 		addFBs(pc);
 		addWRs(pc);

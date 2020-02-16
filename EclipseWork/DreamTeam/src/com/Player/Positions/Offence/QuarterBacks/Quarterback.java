@@ -1,4 +1,4 @@
-package com.Player.Positions.QuarterBacks;
+package com.Player.Positions.Offence.QuarterBacks;
 
 import com.Player.Player.Player;
 

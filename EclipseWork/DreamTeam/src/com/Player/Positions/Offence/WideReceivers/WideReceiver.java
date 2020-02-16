@@ -1,4 +1,4 @@
-package com.Player.Positions.WideReceivers;
+package com.Player.Positions.Offence.WideReceivers;
 
 import com.Player.Player.Player;
 
