@@ -4,7 +4,8 @@ import java.util.Random;
 
 public class BankCharges {
 	Random r = new Random();
-	private int checks, weeks, dollars, balance;
+	private int checks, weeks, dollars;
+	private int balance;
 	private double serviceFee; 
 
 	
@@ -16,7 +17,7 @@ public class BankCharges {
 			balance = randomBalance();
 			weeks = randWeeks();
 			System.out.printf("Initial Balance:\t$%.2f\n",(double)balance);
-			double newBalance = fee(checksWritten(), balance);
+			final double newBalance = fee(checksWritten(), balance);
 			System.out.printf("Checks Written:\t\t%d\n", getChecks());
 			System.out.printf("Fees Per Week:\t\t$%.2f\n", getServiceFee());
 			System.out.printf("Fees Per Month:\t\t$%.2f\n", 4*getServiceFee());
@@ -119,7 +120,7 @@ public class BankCharges {
 	public static void main(String args[]) {
 		for (int i = 0; i<5; i++) {
 			if (i >0) {
-				System.out.println();
+				System.out.println("------------------------------------------");
 			} // enae IF
 			getInstance();
 		} // endae FOR
