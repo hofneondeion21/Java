@@ -25,7 +25,7 @@ public class test{
         	System.out.println(arr.get(i));
         } // endae ENHANCED FOR
         
-        p1.ascendingcollect();
+        // p1.ascendingcollect();
         
         System.out.println("AFTER SORT");
         

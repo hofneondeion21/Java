@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 public class Main {
 
 	private JFrame frame;
-	private Gameplay gp;
+	// private Gameplay gp;
 	public static void main(String args[]) {
 		new Main();
 	}
@@ -30,9 +30,9 @@ public class Main {
 		return frame;
 	}
 	
-	private void addGameplayPanel() {
-		gp = new Gameplay();
-		frame.add(gp);
-	}
+	// private void addGameplayPanel() {
+	// 	gp = new Gameplay();
+	// 	frame.add(gp);
+	// }
 	
 }

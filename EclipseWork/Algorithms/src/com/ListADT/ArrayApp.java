@@ -6,9 +6,6 @@ public class ArrayApp {
 		
 
 	}
-	
-	private void run() {
-		
-	}
+
 
 }

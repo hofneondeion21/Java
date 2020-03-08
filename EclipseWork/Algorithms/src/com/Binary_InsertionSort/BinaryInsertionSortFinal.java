@@ -1,6 +1,6 @@
 package com.Binary_InsertionSort;
 
-import java.util.Arrays;
+// import java.util.Arrays;
 import java.util.Random;
 
 public class BinaryInsertionSortFinal {
@@ -28,15 +28,15 @@ public class BinaryInsertionSortFinal {
 	}
 	
 	void initRun() {
-		int n = 6, nn = 10; 
-		double avg = 0, avgI = 0;
-		long sum = 0, sumI = 0;
+		// int n = 6, nn = 10; 
+		// double avg = 0, avgI = 0;
+		// long sum = 0, sumI = 0;
 
 		
 		for (int i = 1; i <=1; i++) {
 //			System.out.printf("\n---------------------------------\nInput(N) : %d\n", (int)Math.pow(10, i));
 //			for (int j = 0; j <=i; j++) {
-				BinaryInsertionSortFinal bisf = new BinaryInsertionSortFinal(true, (int)Math.pow(10, i));
+				// BinaryInsertionSortFinal bisf = new BinaryInsertionSortFinal(true, (int)Math.pow(10, i));
 //				sum = sum +bisf.getTime();
 //			}
 //			avg = sum/nn;

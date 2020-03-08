@@ -17,7 +17,7 @@ public class BinSertTest {
 	
 	void initRun() {
 		printArr(arr);
-		int ins = -1;
+		// int ins = -1;
 //		binInsertSort(arr, arr.length);
 //		insertSort(arr, arr.length);
 		biSertSort02(arr, arr.length);

@@ -6,9 +6,9 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-import com.GUI.NavigationBar.NavBar;
-import com.GUI.NavigationBar.Controller.NavigationController;
-import com.GUI.Panels.MainJPanel;
+// import com.GUI.NavigationBar.NavBar;
+// import com.GUI.NavigationBar.Controller.NavigationController;
+// import com.GUI.Panels.MainJPanel;
 
 public class MainFrame extends JFrame {
 	/**
@@ -17,7 +17,7 @@ public class MainFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	private int x = 500, y = 400;
-	private NavigationController nc;
+	// private NavigationController nc;
 	public MainFrame() {
 		super("NFL Dream Team");
 		setSize(new Dimension(x,y));
@@ -36,7 +36,7 @@ public class MainFrame extends JFrame {
 	
 	private void addOtherComponents() {
 		add(new MainJPanel(), BorderLayout.CENTER);
-		nc = new NavigationController(this);
+		// nc = new NavigationController(this);
 //		add(, BorderLayout.NORTH);
 		
 		

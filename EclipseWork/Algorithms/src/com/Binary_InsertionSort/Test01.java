@@ -1,6 +1,6 @@
 package com.Binary_InsertionSort;
 
-import java.util.Random;
+// import java.util.Random;
 
 public class Test01 {
 	
@@ -45,22 +45,22 @@ public class Test01 {
 		System.out.printf("TIME: %14d", getInsertTime());
 		printArr(arr);
 	}
+
+	// private int[] initArr(int[] arr, int n) {
+	// 	Random r = new Random();
+	// 	int rand = r.nextInt(10)+0; // generates random number
+	// 	arr = new int[n]; // new instance of array with init size
+	// 	for (int i = 0; i < n; i++) {
+	// 		arr[i] = rand; // populates with random number 
+	// 		rand = r.nextInt(10)+0; // generates another new number
+	// 	} // endae for
+	// 	return arr; // returns the arr 
+	// } // endae initArr method
 	
-	private int[] initArr(int[] arr, int n) {
-		Random r = new Random();
-		int rand = r.nextInt(10)+0; // generates random number
-		arr = new int[n]; // new instance of array with init size
-		for (int i = 0; i < n; i++) {
-			arr[i] = rand; // populates with random number 
-			rand = r.nextInt(10)+0; // generates another new number
-		} // endae for
-		return arr; // returns the arr 
-	} // endae initArr method
-	
-	private int getRandom() {
-		Random r = new Random();
-		return r.nextInt(100)+0; // generates random number
-	}
+	// private int getRandom() {
+	// 	Random r = new Random();
+	// 	return r.nextInt(100)+0; // generates random number
+	// }
 	
 	public void printArr(int[] arr) {
 		System.out.println();

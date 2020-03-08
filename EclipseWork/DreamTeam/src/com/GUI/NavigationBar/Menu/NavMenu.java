@@ -10,7 +10,7 @@ public class NavMenu extends JMenu {
 	private static final long serialVersionUID = 1L;
 //	private String title;
 //	private String sub;
-	private boolean isCalled;
+	// private boolean isCalled;
 
 	public NavMenu(String title) {
 		super(title);
@@ -24,17 +24,17 @@ public class NavMenu extends JMenu {
 	
 	public NavMenu(String title, String ...subTitle ) {
 		super(title);
-		isCalled(true);
+		// isCalled(true);
 		addMenuItem(subTitle);
 	}
 	
-	private void isCalled(boolean isCalled) {
-		this.isCalled = isCalled;
-	}
+	// private void isCalled(boolean isCalled) {
+	// 	this.isCalled = isCalled;
+	// }
 	
-	private boolean getIsCalled() {
-		return isCalled;
-	}
+	// private boolean getIsCalled() {
+	// 	return isCalled;
+	// }
 	
 //	private void setTitle(String title) {
 //		this.title = title;

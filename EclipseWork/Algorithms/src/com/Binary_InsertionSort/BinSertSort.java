@@ -25,8 +25,8 @@ public class BinSertSort {
 	
 	void initRun() {
 		int n = 6, nn = 10;
-		double avg = 0, avgI = 0;
-		long sum = 0, sumI = 0;
+		double avg = 0; //avgI = 0;
+		long sum = 0;// sumI = 0;
 		for (int i = 1; i <=n; i++) {
 			for (int j = 1; j <=nn; j++) {
 				BinSertSort bis = new BinSertSort(true, (int)Math.pow(10, i));
