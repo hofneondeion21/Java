@@ -6,6 +6,8 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
+import com.GUI.Panels.MainJPanel;
+
 // import com.GUI.NavigationBar.NavBar;
 // import com.GUI.NavigationBar.Controller.NavigationController;
 // import com.GUI.Panels.MainJPanel;
@@ -35,8 +37,8 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void addOtherComponents() {
-		add(new MainJPanel(), BorderLayout.CENTER);
-		// nc = new NavigationController(this);
+//		add(new MainJPanel(), BorderLayout.CENTER);
+//		 nc = new NavigationController(this);
 //		add(, BorderLayout.NORTH);
 		
 		

@@ -6,12 +6,25 @@ public class BinInsertSort {
 	private int[] arr;
 	private Random r = new Random();
 	private int time, InsertTime;
-
+	private static BinInsertSort instance = null;
 	public static void main(String[] args) {
-			new BinInsertSort();
+			BinInsertSort.getInstance();
 	}
 	
-	public BinInsertSort() { initRun(); }
+	
+	// Singleton Design to have only one instance of the object
+	public static BinInsertSort getInstance() {
+		if (instance == null) {
+			synchronized(BinInsertSort.class) {
+				if (instance == null) {
+					instance = new BinInsertSort();
+				}
+			}
+		}
+		return instance;
+	}
+	
+	private BinInsertSort() { initRun(); }
 	
 	public BinInsertSort(int size, boolean flag) {
 		arr = initArr(arr, size);
@@ -30,32 +43,33 @@ public class BinInsertSort {
 
 	public void initRun() {
 		int n = 6, nn = 10; // initialize number of iteration n and nn
-		// double avg = 0, avgInsert = 0; long sum = 0, sumInsert = 0;
+		 double avg = 0, avgInsert = 0; long sum = 0, sumInsert = 0;
 		// variable initializations
 		for (int i = 1; i <=n; i++) { 
 			// during for loop iteration, outer for loop's i will help initialize the array size
-//			for (int j = 1; j < nn; j++) {
-				// inner for loop will make new object with size as param 9 times
-//				BinInsertSort bis = new BinInsertSort((int)Math.pow(10, i), false);
+			for (int j = 1; j < nn; j++) {
+
+				// inner for loop will make new object with size as param nn times
+				BinInsertSort bis = new BinInsertSort((int)Math.pow(10, i), false);
 //				System.out.printf("%d | ",bis.getArr()[i]);
-//				sum = sum + bis.getTime(); 
+				sum = sum + bis.getTime(); 
+				
 				// everytime it finishes sorting, a setter and getter method will act
 				// the object will call the getTime() method to get the calculated sorting time
 				// that time will be summed
-//			} // endae first nested for loop
-//			avg = sum/(nn-1); // findin the average time for Bin-Insert Aglorithm
-//			System.out.printf("%6d || Bin-Insert:\t %13.2f\n",(int)Math.pow(10, i),avg);
-//			System.out.printf("\n\n------- AVG Time (ns) for N = %6d : %13.2f ----------\n\n", (int)Math.pow(10, i), avg);
+			} // endae first nested for loop
+			avg = sum/(nn-1); // findin the average time for Bin-Insert Aglorithm
+
+			System.out.printf("\n\n------- Bin-Insert AVG Time (ns) for N = %6d : %13.2f ----------\n\n", (int)Math.pow(10, i), avg);
 			
 //	-------- BELOW CODE DOES THE SAME AS CODE ABOVE, COMPUTES ORIGINAL INSERTION SORT TIME ---------------------------
 			for (int j = 1; j < nn; j++) {
-				// BinInsertSort bisI = new BinInsertSort((int)Math.pow(10, i), true);
-				// sumInsert = sumInsert + bisI.getInsertTime();
+				 BinInsertSort bisI = new BinInsertSort((int)Math.pow(10, i), true);
+				 sumInsert = sumInsert + bisI.getInsertTime();
 			} // endae second nested for loop
-			// avgInsert = sumInsert/(nn-1);
-//			System.out.printf("%6d || Insert  : \t %13.2f\n\n",(int)Math.pow(10, i),avgInsert);
-			// System.out.printf("Avg : %12.2f\n", avgInsert);
-//			System.out.printf("\n\n------- AVG Time (ns) for N = %6d : %13.2f ----------\n\n", (int)Math.pow(10, i), avgInsert);
+			avgInsert = sumInsert/(nn-1);
+
+			System.out.printf("\n\n------- Insert AVG Time (ns) for N = %6d : %13.2f ----------\n\n", (int)Math.pow(10, i), avgInsert);
 		}	// endae outer for loop
 	} // endae initRun method
 	

@@ -2,6 +2,7 @@ package DecisionStructures;
 
 import java.util.Random;
 
+
 public class BankCharges {
 	Random r = new Random();
 	private int checks, weeks, dollars;

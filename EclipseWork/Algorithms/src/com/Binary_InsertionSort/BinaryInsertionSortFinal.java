@@ -3,17 +3,37 @@ package com.Binary_InsertionSort;
 // import java.util.Arrays;
 import java.util.Random;
 
-public class BinaryInsertionSortFinal {
 
-	private int[] arr; 
-	private Random r = new Random();
+/*
+ * 	Class is to combined Binary and Insertion sort algorithm to 
+ * 
+ * 
+ */
+public class BinaryInsertionSortFinal {
+// Instance variables
+	private int[] arr;						 
+	private Random r = new Random();		// to help generate random values
 	private int time, InsertTime;;
+	private static BinaryInsertionSortFinal instance = null;
+	
 	
 	public static void main(String args[]) {
-		new BinaryInsertionSortFinal();
+		BinaryInsertionSortFinal.getInstance();		
 	}
 	
-	public BinaryInsertionSortFinal() { initRun(); }
+	// Singleton Design to create only one instance of the this class/object
+	private static BinaryInsertionSortFinal getInstance() {
+		if (instance == null) {
+			synchronized(BinaryInsertionSortFinal.class) {
+				if (instance == null) {
+					instance = new BinaryInsertionSortFinal();
+				}
+			}
+		}
+		return instance;
+	}
+	
+	private BinaryInsertionSortFinal() { initRun(); }
 	
 	public BinaryInsertionSortFinal(boolean flag, int size) {
 		arr = initArr(arr, size);
@@ -22,32 +42,35 @@ public class BinaryInsertionSortFinal {
 			binaryInsertSort(arr, arr.length);
 			printArr(arr);
 		}
-//		else {
-//			insertSort(arr, arr.length);
-//		}
+		else {
+			insertSort(arr, arr.length);
+		}
 	}
 	
 	void initRun() {
-		// int n = 6, nn = 10; 
-		// double avg = 0, avgI = 0;
-		// long sum = 0, sumI = 0;
+		 int n = 6, nn = 10; 
+		 double avg = 0, avgI = 0;
+		 long sum = 0, sumI = 0;
 
-		
+		 /*
+		  * Generate test cases for the algorithm to run
+		  * 
+		  */
 		for (int i = 1; i <=1; i++) {
-//			System.out.printf("\n---------------------------------\nInput(N) : %d\n", (int)Math.pow(10, i));
-//			for (int j = 0; j <=i; j++) {
-				// BinaryInsertionSortFinal bisf = new BinaryInsertionSortFinal(true, (int)Math.pow(10, i));
-//				sum = sum +bisf.getTime();
-//			}
-//			avg = sum/nn;
-//			System.out.printf("Avg: %16.2f\n", avg);
-			
-//			for (int j = 0; j < nn; j++) {
-//				BinaryInsertionSortFinal bisf = new BinaryInsertionSortFinal(false, (int)Math.pow(10, i));
-//				sumI = sumI +bisf.getInsertTime();
-//			}
-//			avgI = sumI/nn;
-//			System.out.printf("AvgI: %15.2f\n", avgI);
+			System.out.printf("\n---------------------------------\nInput(N) : %d\n", (int)Math.pow(10, i));
+			for (int j = 0; j <=i; j++) {
+				 BinaryInsertionSortFinal bisf = new BinaryInsertionSortFinal(true, (int)Math.pow(10, i));
+				sum = sum +bisf.getTime();
+			}
+			avg = sum/nn;
+			System.out.printf("Avg: %16.2f\n", avg);
+
+			for (int j = 0; j < nn; j++) {
+				BinaryInsertionSortFinal bisf = new BinaryInsertionSortFinal(false, (int)Math.pow(10, i));
+				sumI = sumI +bisf.getInsertTime();
+			}
+			avgI = sumI/nn;
+			System.out.printf("AvgI: %15.2f\n", avgI);
 		}
 	}
 	
@@ -76,7 +99,7 @@ public class BinaryInsertionSortFinal {
 						printArr(arr);
 						System.out.println("KEY = "+tmp + " || "+"RETURN: "+j);
 					}
-//			System.arraycopy(arr,  j, arr, j+1, i-j); // Copying all values after the inserted value O(n)
+			System.arraycopy(arr,  j, arr, j+1, i-j); // Copying all values after the inserted value O(n)
 			arr[j] = tmp;
 		}
 		setTime((int)(System.nanoTime() - start) + (innerE-innerS));
