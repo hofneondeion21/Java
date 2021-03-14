@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -96,6 +97,7 @@ public class FileHandlingManager {
 		reader.readDirectoryFile();
 		directories = reader.getDirectories();
 		displayIntroDirectoryPrompt();
+		displayRandomNames();
 		System.out.println("Please Enter Name to display information: ");
 		String input = z.next();
 		String option = startPromptSequence(input);
@@ -121,16 +123,16 @@ public class FileHandlingManager {
 
 	private static String startPromptSequence(String input) {
 		String option = "x";
-		Directory result = directories.stream().filter(e -> e.getName().equalsIgnoreCase(input.trim())).findFirst()
-				.get();
+		Optional<Directory> optRes = directories.stream().filter(e -> e.getName().equalsIgnoreCase(input.trim()))
+				.findFirst();
+		Directory result = (optRes.isPresent()) ? result = optRes.get() : null;
 		String printResults = (result == null) ? "NO RESULTS FOUND!"
-				: String.format("Name\t| Phone Number\t\n%s\t| %s\n", result.getName(), result.getPhoneNumber());
+				: String.format("Nam\t| Phone Number\t%n%s\t| %s%n", result.getName(), result.getPhoneNumber());
 		if (!printResults.equalsIgnoreCase("NO RESULTS FOUND!")) {
 			System.out.println(printResults);
 			System.out.println("What would you like to Update: Name[N], Phone Number [P], or Exit [X]");
 			option = z.next();
 		}
-		System.out.println(printResults);
 		return option;
 	}
 
@@ -143,7 +145,7 @@ public class FileHandlingManager {
 		boolean flag = false;
 		if (input.equalsIgnoreCase("x") || input.equalsIgnoreCase("exit")) {
 			return flag;
-		} else if (input.equalsIgnoreCase("n")) {
+		} else if (input.equalsIgnoreCase("n") || input.equalsIgnoreCase("name")) {
 			System.out.println("Enter New Name to Update: ");
 			String value = z.next();
 			Directory temp = null;
@@ -160,7 +162,7 @@ public class FileHandlingManager {
 				flag = true;
 				directories = tempList;
 			}
-		} else {
+		} else if (input.equalsIgnoreCase("p")) {
 			System.out.println("Enter New Phone Number to Update: ");
 			String value = z.next();
 			Directory temp = null;
@@ -175,13 +177,25 @@ public class FileHandlingManager {
 				System.out.println("NUMBER HAS BEEN UPDATED..." + " -> " + temp.toString());
 				updatedDirectory = true;
 				flag = true;
+				directories = tempList;
 			}
+		} else {
+			System.out.println("WRONG INPUT!");
+			flag = true;
 		}
 		return flag;
 	}
 
+	private static void displayRandomNames() {
+		int rand = r.nextInt(directories.size()) + 0;
+		for (int i = 0; i < 10; i++) {
+			System.out.println(directories.get(rand));
+			rand = r.nextInt(directories.size()) + 0;
+		}
+	}
+
 	private static void displayOutroDirectoryPrompt(boolean isUpdated) {
-		String outro = (isUpdated) ? "Updating Changes...\nTerminating Directory...\nGOODBYE!"
+		String outro = (isUpdated) ? "Updating File...\nTerminating Directory...\nGOODBYE!"
 				: "Terminating Directory...\nGOODBYE!";
 		System.out.println(outro);
 	}
