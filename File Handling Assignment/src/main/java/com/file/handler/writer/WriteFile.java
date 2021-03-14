@@ -31,6 +31,7 @@ public class WriteFile {
 			for (IAccount account : accounts.getAccounts()) {
 				writer.write(account.getAccountNumber() + "\n");
 			}
+			System.out.println("NEW FILE CREATED: " + newFile.getPath());
 			writer.flush();
 		} catch (IOException e) {
 			e.printStackTrace();

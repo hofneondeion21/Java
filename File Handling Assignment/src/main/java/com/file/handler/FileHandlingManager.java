@@ -37,7 +37,30 @@ public class FileHandlingManager {
 	private static boolean updatedDirectory = false;
 
 	public static void run() {
-		phoneDirectoryProgram();
+		String input = displayPrograms();
+		while(!input.equalsIgnoreCase("x")) {
+			input = displayPrograms();
+		}
+	}
+	
+	private static String displayPrograms() {
+		System.out.println("Choose Program to Run: ");
+		System.out.println("[2] -> Validate Account Numbers (Module 2)");
+		System.out.println("[3] -> Source Destination (Module 3)");
+		System.out.println("[4] -> Directory Program (Module 4)");
+		System.out.println("[X] -> Terminate Program (EXIT)");
+		z = new Scanner(System.in);
+		String input = z.next();
+		if(input.equals("2")) {
+			readAccountsProgram();
+		}
+		else if(input.equals("3")) {
+			promptFileSrcAndDest();
+		}
+		else if(input.equals("4")) {
+			phoneDirectoryProgram();
+		}
+		return input;
 	}
 
 	public static String getWriteFileName() {
@@ -65,6 +88,8 @@ public class FileHandlingManager {
 	}
 
 	private static void promptFileSrcAndDest() {
+		System.out.println("STARTING UP SOURCE/DESTINATION PROGRAM...");
+		System.out.println("----------------------------------------------");
 		reader = ReadFile.getInstance();
 		writer = WriteFile.getInstance();
 		System.out.println("Enter the Source File Name: ");
@@ -80,6 +105,8 @@ public class FileHandlingManager {
 	}
 
 	private static void readAccountsProgram() {
+		System.out.println("STARTING UP VALIDATING ACCOUNTS PROGRAM...");
+		System.out.println("----------------------------------------------");
 		reader = ReadFile.getInstance();
 		reader.readFile(ACCOUNTS_TXT_PATH);
 		accounts = reader.getAllAccounts();
@@ -88,6 +115,8 @@ public class FileHandlingManager {
 	}
 
 	private static void phoneDirectoryProgram() {
+		System.out.println("STARTING UP DIRECTORY PROGRAM...");
+		System.out.println("----------------------------------------------");
 		z = new Scanner(System.in);
 		disableAllPermission();
 		reader = ReadFile.getInstance();

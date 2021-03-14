@@ -69,8 +69,10 @@ public class ReadFile {
 
 	private void parseThroughFile() {
 		try (Scanner z = new Scanner(new FileReader(file))) {
+			System.out.println("Reading through file: "+file.getPath());
 			while (z.hasNextLine()) {
 				String accountLine = z.nextLine().trim();
+				System.out.printf("Validating Account [%s] ...%n", accountLine);
 				if (ValidateCheckDigits.isValidAccount(accountLine)) {
 					accounts.addValidAccount(new Account(accountLine));
 				}
